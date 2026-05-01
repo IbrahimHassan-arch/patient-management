@@ -40,4 +40,8 @@ public class PatientController {
         PatientResponceDTO patient = patientService.updatePatient(id, patientRequestDTO);
         return ResponseEntity.ok().body(patient);
     }
+    @DeleteMapping("/{id}")
+    public void deletePatient(@PathVariable UUID id){
+        patientService.deletePatient(id);
+    }
 }
